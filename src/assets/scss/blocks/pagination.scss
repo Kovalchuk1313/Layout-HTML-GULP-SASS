@@ -1,0 +1,138 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 8rem;
+
+    @include breakpoint($tablet-bp) { 
+        margin-top: 5rem;
+    }
+}
+
+.add-post {
+    padding: 1.5rem 2rem;
+    margin-bottom: 3rem;
+
+    background-color: $secondary;
+    box-shadow: 0 15px 25px rgba($black, .45);
+    border-radius: 5px;
+    
+    @include breakpoint($mobile-bp) {
+        padding: 1.5rem;
+    }
+}
+
+.add-post__form {
+    display: flex;
+    align-items: center;
+}
+
+.add-post__textarea {
+    display: block;
+    flex-grow: 1;
+    height: 26px;
+    overflow: hidden;
+
+    border: none;
+    background: transparent;
+    resize: none;
+
+    font-size: 1.5rem;
+    color: $white;
+    font-family: inherit;
+
+    &::placeholder {
+        color: #D2D2D2;
+    }
+}
+
+.add-post__form-actions {
+    width: 12rem;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: flex-end;
+    
+    @include breakpoint($mobile-bp) {
+        width: 9rem;
+    }
+}
+
+.add-post__file,
+.add-post__send {
+    display: block;
+    width: 4.4rem;
+    height: 4.4rem;
+
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+
+    transition: background-color .2s linear;
+}
+
+.add-post__file {
+    background: #EBEBEB url("../images/add-photo.svg") center no-repeat;
+
+    input {
+        display: none;
+    }
+
+    &:hover {
+        background-color: darken(#EBEBEB, 5%);
+    }
+    
+    @include breakpoint($mobile-bp) {
+        background-size: 18px;
+    }
+}
+
+.add-post__send {
+    margin-left: 1.5rem;
+    
+    font-size: 0;
+    color: transparent;
+    
+    background: $blue url("../images/send.svg") center no-repeat;
+
+    &:hover {
+        background-color: darken($blue, 5%);
+    }
+    
+    @include breakpoint($mobile-bp) {
+        background-size: 15px;
+    }
+}
+
+
+
+
+
+.pagination__item {
+    margin: 0 .5rem;
+}
+
+.pagination__link {
+    display: block;
+    width: 4rem;
+    height: 4rem;
+
+    background-color: #0D0D0D;
+    border-radius: 3px;
+    box-shadow: 0 0 10px rgba($black, .15);
+
+    font-size: 1.4rem;
+    line-height: 4rem;
+    color: $white;
+    text-align: center;
+    text-decoration: none;
+
+    transition: background-color .1s linear;
+
+    &:hover {
+        background-color: lighten(#0D0D0D, 2%);
+    }
+
+    &.active {
+        background-color: $blue;
+        box-shadow: 0 0 10px rgba($blue, .15);
+    }
+}
